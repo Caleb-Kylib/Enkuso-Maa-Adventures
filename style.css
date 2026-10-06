@@ -160,6 +160,6 @@
 /* JavaScript-powered page transitions */
 html.js .hero,html.js .page-hero{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 html.js.page-ready .hero,html.js.page-ready .page-hero{opacity:1;transform:none}
-html.js main>section:not(.hero):not(.page-hero),html.js .service-card{opacity:0;transform:translateY(28px);transition:opacity .6s ease var(--reveal-delay,0ms),transform .6s ease var(--reveal-delay,0ms)}
+html.js main>section.will-reveal,html.js .service-card.will-reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease var(--reveal-delay,0ms),transform .6s ease var(--reveal-delay,0ms)}
 html.js main>section.is-visible,html.js .service-card.is-visible{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){html.js .hero,html.js .page-hero,html.js main>section:not(.hero):not(.page-hero),html.js .service-card{opacity:1;transform:none;transition:none}}

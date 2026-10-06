@@ -35,6 +35,26 @@ if (!reduceMotion) {
 
   revealItems.forEach((item, index) => {
     item.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 80}ms`);
+    item.classList.add('will-reveal');
     revealObserver.observe(item);
   });
+
+  // Never leave content hidden if a browser delays or skips an observer callback.
+  window.setTimeout(() => revealItems.forEach(item => item.classList.add('is-visible')), 1200);
+}
+
+// Keep the detailed homepage footer consistent across every page.
+const footer = document.querySelector('footer');
+if (footer && !footer.querySelector('.footer-main')) {
+  footer.innerHTML = `
+    <div class="footer-main">
+      <div>
+        <a class="brand" href="index.html"><img class="brand-mark" src="assets/img/enkuso.jpeg" alt="Enkuso Maa Adventures logo" /><span>ENKUSO MAA<small>ADVENTURES</small></span></a>
+        <p class="footer-tagline">Authentic culture. Meaningful journeys.<br />Lasting memories.</p>
+      </div>
+      <div class="footer-column"><p class="footer-label">Explore</p><a href="about.html">About us</a><a href="services.html">Services</a><a href="team.html">Our team</a></div>
+      <div class="footer-column"><p class="footer-label">Connect</p><a href="contact.html">Plan your journey</a><a href="mailto:Enkusomaaadventures@gmail.com">Email us</a><a href="https://wa.me/254792629837" target="_blank" rel="noopener">WhatsApp</a></div>
+      <div class="footer-column"><p class="footer-label">Find us</p><p>Maasai Mara<br />Narok County, Kenya</p></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Enkuso Maa Adventures</span><span>Made with care in the Mara</span></div>`;
 }
