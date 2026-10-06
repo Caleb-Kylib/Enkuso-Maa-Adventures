@@ -7,6 +7,34 @@
 
 .dan-photo{background-image:url('assets/img/nakola.jpeg')}
 
+/* Services cards */
+.services-overview{display:block}
+.services-intro{position:static;margin:0 auto 48px;text-align:center}
+.services-intro h2{font-size:clamp(42px,5vw,67px);letter-spacing:-.05em}
+.services-intro>p:last-child{font-size:17px;max-width:590px;margin-left:auto;margin-right:auto}
+.services-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.service-card{position:relative;min-height:470px;overflow:hidden;background:var(--ink);color:white;isolation:isolate;transition:transform .35s ease,box-shadow .35s ease}
+.service-card-image{position:absolute;inset:0;background:center/cover no-repeat;z-index:-2;transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+.service-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,28,22,.92) 8%,rgba(8,28,22,.15) 78%);z-index:-1;transition:background .35s ease}
+.service-card-content{height:100%;padding:30px;display:flex;flex-direction:column;justify-content:flex-end}
+.service-number{margin:0 0 auto;font-size:11px;font-weight:700;letter-spacing:.14em;color:#f7cf87}
+.service-card h3{font-size:clamp(30px,3vw,40px);margin:72px 0 13px}
+.service-card-content>p:not(.service-number){font-size:14px;line-height:1.6;margin:0 0 22px;max-width:360px}
+.service-card .text-link{align-self:flex-start;border-bottom:1px solid rgba(255,255,255,.65);padding-bottom:4px}
+.service-card .text-link span{display:inline-block;transition:transform .25s ease}
+.service-card:hover,.service-card:focus-within{transform:translateY(-6px);box-shadow:0 18px 42px rgba(8,28,22,.24)}
+.service-card:hover .service-card-image,.service-card:focus-within .service-card-image{transform:scale(1.08)}
+.service-card:hover .text-link span,.service-card:focus-within .text-link span{transform:translateX(5px)}
+.service-card:hover::after,.service-card:focus-within::after{background:linear-gradient(0deg,rgba(8,28,22,.96) 5%,rgba(8,28,22,.38) 100%)}
+.cultural-service .service-card-image{background-image:url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1100&q=80')}
+.beads-service .service-card-image{background-image:url('https://images.unsplash.com/photo-1598520106830-8c45c2035460?auto=format&fit=crop&w=1100&q=80')}
+.migration-service .service-card-image{background-image:url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1100&q=80')}
+.safari-service .service-card-image{background-image:url('https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1100&q=80')}
+@media(max-width:800px){.services-intro{margin:0 auto 35px}.services-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.service-card{min-height:430px}}
+@media(max-width:560px){.services-card-grid{grid-template-columns:1fr}.service-card{min-height:410px}}
+.service-callout{text-align:center}
+@media(prefers-reduced-motion:reduce){.service-card,.service-card-image,.service-card .text-link span{transition:none}.service-card:hover,.service-card:focus-within{transform:none}}
+
 .beads-page-hero{background-image:url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Maasai_women_wearing_ceremonial_beadwork_in_Ngorongoro.jpg')}
 .beads-culture{display:grid;grid-template-columns:1.05fr 1fr;gap:7vw;align-items:center}
 .beads-culture-copy h2{font-size:clamp(42px,5vw,69px);letter-spacing:-.05em}
